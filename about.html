@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Thaba Bosiu - History & Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* === ENHANCED CLASSIC STYLES FOR ABOUT PAGE === */
+        
+        /* Elegant color scheme */
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2B48C;
+            --accent: #CD853F;
+            --light: #F5F5DC;
+            --dark: #3E2723;
+            --text: #5D4037;
+        }
+        
+        .about-page {
+            background: linear-gradient(135deg, #f8f4e9 0%, var(--light) 100%);
+            color: var(--text);
+            font-family: 'Merriweather', serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .about-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="%23F5F5DC"/><path d="M0 60 L120 60 M60 0 L60 120" stroke="%23D2B48C" stroke-width="0.5" opacity="0.2"/></svg>');
+            z-index: -1;
+        }
+        
+        /* Enhanced Navigation */
+        .navbar {
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .nav-logo h2 {
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        .nav-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.5s ease;
+        }
+        
+        .nav-logo:hover h2::after {
+            width: 100%;
+        }
+        
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 4px;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+        
+        .nav-link:hover::before, .nav-link.active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--dark);
+        }
+        
+        /* Enhanced Page Header */
+        .page-header {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(210, 180, 140, 0.05) 100%);
+            z-index: -1;
+        }
+        
+        .page-header h1 {
+            font-size: 3.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        /* Enhanced Main Content */
+        .main-content {
+            padding: 2rem 0 4rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, white 0%, #fcfaf5 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease both;
+        }
+        
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--secondary) 0%, transparent 70%);
+            border-radius: 0 0 0 100px;
+            opacity: 0.1;
+        }
+        
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.7rem;
+            margin: 0 0 1.5rem 0;
+            position: relative;
+        }
+        
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .content-section p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+            position: relative;
+        }
+        
+        .content-section strong {
+            color: var(--primary);
+        }
+        
+        /* Enhanced Floating Image */
+        .image-float-right {
+            float: right;
+            margin: 0 0 1.5rem 2.5rem;
+            width: 45%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.5s ease;
+            border: 5px solid white;
+            position: relative;
+        }
+        
+        .image-float-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(210, 180, 140, 0.1) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .image-float-right:hover {
+            transform: perspective(1000px) rotateY(0);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-float-right img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-float-right:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Enhanced Blockquote */
+        blockquote {
+            margin: 2.5rem 0;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--light) 100%);
+            border-left: 5px solid var(--primary);
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--dark);
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 6rem;
+            color: rgba(139, 69, 19, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        /* Enhanced Fun Fact */
+        .fun-fact {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f4e9 0%, var(--light) 100%);
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fun-fact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B4513" opacity="0.1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .fact-toggle {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .fact-toggle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .fact-toggle:hover::before {
+            left: 100%;
+        }
+        
+        .fact-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.4);
+        }
+        
+        .fact-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Destination Info Styles */
+        .destination-info {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f4e9 0%, var(--light) 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .destination-info h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .destination-info h4 {
+            color: var(--primary);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .destination-info ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .destination-info li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .destination-info li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+        
+        .additional-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--secondary);
+        }
+        
+        .show-more-btn {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin: 1rem 0;
+        }
+        
+        .show-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .show-more-btn:hover::before {
+            left: 100%;
+        }
+        
+        .show-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.4);
+        }
+        
+        /* Random Fun Fact */
+        .random-fun-fact {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--light) 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.01); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Enhanced Footer */
+        .footer {
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            color: var(--light);
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .image-float-right {
+                float: none;
+                width: 100%;
+                margin: 1rem 0;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="about-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Thaba Bosiu</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link active">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Discover Thaba Bosiu</h1>
+            <p>Explore the rich history and cultural significance of this sacred mountain</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- History Section -->
+            <section class="content-section">
+                <h2>History & Culture</h2>
+                <div class="image-float-right">
+                    <!-- REPLACE WITH YOUR IMAGE URL -->
+                    <img src="images/mokorotlo.jpg">
+                </div>
+                <p>The history of Thaba Bosiu is deeply intertwined with the formation of the Basotho nation. King Moshoeshoe I, the founder of Lesotho, established his fortress on this mountain in 1824 during a period of widespread conflict and displacement known as the Lifaqane wars.</p>
+                
+                <p>Moshoeshoe wisely chose Thaba Bosiu for its defensive properties—the mountain is surrounded by steep cliffs with only a few narrow paths leading to the summit. According to legend, the mountain grew higher at night, making it impossible for enemies to scale its heights under cover of darkness.</p>
+                
+                <p>Under Moshoeshoe's leadership, Thaba Bosiu became a place of refuge for various groups fleeing the violence of the Lifaqane wars. The king welcomed people from different clans and backgrounds, unifying them into what would become the Basotho nation.</p>
+                
+                <p>The cultural significance of Thaba Bosiu extends beyond its military history. It served as the capital of the Basotho kingdom and the center of political, social, and religious life. Important decisions affecting the nation were made here, and traditions were established that continue to influence Basotho culture today.</p>
+                
+                <blockquote>
+                    Thaba Bosiu was declared a national monument in 1967, recognizing its importance to Lesotho's heritage.
+                </blockquote>
+            </section>
+
+            <!-- Attractions Section -->
+            <section class="content-section">
+                <h2>Must-See Attractions</h2>
+                <p>When visiting Thaba Bosiu, there are several significant sites that offer insight into the mountain's historical and cultural importance:</p>
+                
+                <p><strong>Moshoeshoe's Grave:</strong> The final resting place of King Moshoeshoe I is located on the mountain, marked by a simple stone cairn. This site is considered sacred and is an important place of pilgrimage for Basotho people.</p>
+                
+                <p><strong>The Fortifications:</strong> Remains of stone fortifications built during Moshoeshoe's time can still be seen around the mountain. These structures demonstrate the strategic military planning that made Thaba Bosiu nearly impregnable.</p>
+                
+                <p><strong>The Visitor Center:</strong> The on-site museum provides historical context through exhibits of artifacts, photographs, and informational displays that tell the story of Thaba Bosiu and the Basotho nation.</p>
+                
+                <p><strong>Panoramic Views:</strong> From the summit, visitors can enjoy breathtaking 360-degree views of the surrounding plains and mountains, understanding why this location was chosen as a defensive stronghold.</p>
+                
+                <!-- Fun Fact Toggle -->
+                <div class="fun-fact">
+                    <button class="fact-toggle">Discover Fun Fact</button>
+                    <div class="fact-content">
+                        <p>Thaba Bosiu was never conquered despite numerous attacks during the 19th century. Its natural defenses and strategic position made it impregnable to enemies, including well-armed forces during the Free State–Basotho Wars.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Explore Thaba Bosiu | The Mountain of Night| Assignment 2 | TEBATSO KHOARAI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
